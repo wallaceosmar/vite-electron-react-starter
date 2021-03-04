@@ -14,13 +14,8 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    '@typescript-eslint',
-  ],
-  ignorePatterns: [
-    'node_modules/**',
-    'dist/**',
-  ],
+  plugins: ['@typescript-eslint'],
+  ignorePatterns: ['node_modules/**', 'dist/**'],
 
   rules: {
     /**
@@ -40,4 +35,3 @@ module.exports = {
     quotes: ['warn', 'single'],
   },
 };
-

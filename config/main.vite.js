@@ -1,13 +1,15 @@
-const {join} = require('path');
-const {node} = require('./electron-dep-versions');
+const { join } = require('path');
+const { node } = require('./electron-dep-versions');
 
 /**
  * @type {import('vite').UserConfig}
  * @see https://vitejs.dev/config/
  */
 module.exports = {
-  alias: {
-    '/@/': join(process.cwd(), './src/main') + '/',
+  resolve: {
+    alias: {
+      '/@/': join(process.cwd(), './src/main') + '/',
+    },
   },
   build: {
     target: `node${node}`,

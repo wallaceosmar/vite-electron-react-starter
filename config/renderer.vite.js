@@ -1,16 +1,18 @@
-const {join} = require('path');
-const vue = require('@vitejs/plugin-vue');
-const {chrome} = require('./electron-dep-versions');
+const { join } = require('path');
+import reactRefresh from '@vitejs/plugin-react-refresh';
+const { chrome } = require('./electron-dep-versions');
 /**
  * @type {import('vite').UserConfig}
  * @see https://vitejs.dev/config/
  */
 module.exports = {
   root: join(process.cwd(), './src/renderer'),
-  alias: {
-    '/@/': join(process.cwd(), './src/renderer') + '/',
+  resolve: {
+    alias: {
+      '/@/': join(process.cwd(), './src/renderer') + '/',
+    },
   },
-  plugins: [vue()],
+  plugins: [reactRefresh()],
   build: {
     target: `chrome${chrome}`,
     polyfillDynamicImport: false,
@@ -23,4 +25,3 @@ module.exports = {
     emptyOutDir: true,
   },
 };
-
