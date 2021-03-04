@@ -1,6 +1,11 @@
-# Vite Electron Builder Template
+# Vite Electron Builder with React ⚛ Template
 
 > Vite+Electron = 🔥
+
+> This is a fork of the amazing [project](https://github.com/cawa-93/vite-electron-builder) by [cawa-93](https://github.com/cawa-93). This forl is not refined for usage with react in terms of file structure and files. But everything works just fine with react. I'm keeping the original docs by the author for better reference. 
+
+> This react fork may not be actively maintained by me in future.
+
 
 This is a secure template for electron applications. Written following the latest safety requirements, recommendations and best practices.
 

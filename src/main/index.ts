@@ -18,7 +18,8 @@ if (!gotTheLock) {
     app
       .whenReady()
       .then(() => import('electron-devtools-installer'))
-      .then(({ default: installExtension, REACT_DEVELOPER_TOOLS }) => {
+      .then(({ default: installExtension }) => {
+        const REACT_DEVELOPER_TOOLS = 'fmkadmapgofadopljbjfkapdkoienihi';
         /** @see https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg */
         return installExtension(REACT_DEVELOPER_TOOLS);
       })
@@ -34,7 +35,7 @@ if (!gotTheLock) {
         preload: join(__dirname, '../preload/index.cjs.js'),
         contextIsolation: env.MODE !== 'test', // Spectron tests can't work with contextIsolation: true
         enableRemoteModule: env.MODE === 'test',
-        sandbox: true, // Spectron tests can't work with enableRemoteModule: false
+        // sandbox: true, // Spectron tests can't work with enableRemoteModule: false
       },
     });
 
